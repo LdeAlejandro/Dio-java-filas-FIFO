@@ -1,0 +1,49 @@
+package dio;
+
+// Classe genérica que representa um nó em uma estrutura encadeada
+public class No<T> {
+
+    // Armazena o conteúdo do nó (genérico, pode ser qualquer tipo)
+    private T object;
+
+    // Referência para o próximo nó na estrutura encadeada
+    private No<T> refNo;
+
+    // Construtor padrão (sem parâmetros)
+    public No() {
+    }
+
+    // Construtor que inicializa o nó com um objeto e define a referência como nula
+    public No(T object) {
+        this.refNo = null; // Por padrão, o próximo nó é nulo
+        this.object = object; // Define o conteúdo do nó
+    }
+
+    // Retorna a referência para o próximo nó
+    public No getRefNo() {
+        return refNo;
+    }
+
+    // Define a referência para o próximo nó
+    public void setRefNo(No refNo) {
+        this.refNo = refNo;
+    }
+
+    // Retorna o objeto armazenado no nó
+    public Object getObject() {
+        return object;
+    }
+
+    // Define o objeto armazenado no nó
+    public void setObject(T object) {
+        this.object = object;
+    }
+
+    @Override
+    public String toString() {
+        return "No{" +
+                "object=" + object + // Mostra o conteúdo armazenado
+                ", refNo=" + refNo + // Mostra a referência do próximo nó
+                '}';
+    }
+}
